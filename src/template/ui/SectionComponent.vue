@@ -14,7 +14,7 @@
                     Preview
                 </button>
 
-                <button class="btn btn-default" @click="addSection">Add Section</button>
+                <button class="btn btn-default" @click="addSection">Add Scenario</button>
             </div>
         </div>
 
@@ -28,9 +28,9 @@
                             </div>
                             <div class="col-md-8 text-right">
                                 <p style="margin-top: 5px;">
-                                    <span class="pr-2 clickable" @click="addRow(index)"><font-awesome-icon icon="plus"/> Add Row</span>
-                                    <span class="pr-2 clickable" @click="delSection(index)"><font-awesome-icon icon="times"/> Remove Section</span>
-                                    <span class="pr-2 clickable" @click="configSection(index)"><font-awesome-icon icon="cog"/> Section Config</span>
+                                    <span class="pr-2 clickable" @click="addRow(index)"><font-awesome-icon icon="plus"/> Add Step</span>
+                                    <span class="pr-2 clickable" @click="delSection(index)"><font-awesome-icon icon="times"/> Remove Step</span>
+                                    <span class="pr-2 clickable" @click="configSection(index)"><font-awesome-icon icon="cog"/> Step Config</span>
                                     <span class="clickable collapsed" data-toggle="collapse" :data-target="'#' + section.name + '_body'">
                                         <i class="fa fa-fw fa-chevron-up"></i>
                                         <i class="fa fa-fw fa-chevron-down"></i>
@@ -92,7 +92,7 @@
             delSection(secIndex) {
                 // make sure no dependencies
                 if (this.form.sections[secIndex].rows.length > 0) {
-                    SethPhatToaster.error("Can't remove this section because it's still have row(s) inside.");
+                    SethPhatToaster.error("Can't remove this scenario because it's still have row(s) inside.");
                     return;
                 }
 
